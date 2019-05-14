@@ -1,0 +1,144 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ name }} Travel Advisories
+{% endblock %}
+
+{% block main %}
+
+    <!-- Title Section -->
+    <div class="container-fluid padding">
+        <h1 class="display-4 text-center">{{ name }} Travel Advisories</h1>
+        <p class="text-center">Last updated: {{ updated }}</p>
+        <hr class="my-4">
+    </div>
+        
+    <!-- General Advisory -->
+    <div class="container-fluid padding">
+        <h2>General Advisory</h2>
+        <br>
+        <p class="ml-4">{{ advisory }}</p>
+        <br>
+
+        <h3 class="text-center">Regional Advisories</h3>
+        <br>
+        {% for i in range(regional_cat|length) %}
+
+            <h5 class="ml-4">{{ regional_cat[i] }}</h5>
+            <p class="ml-4">{{ regional_desc[i] }}</p>
+
+        {% endfor %}
+        <hr class="my-4">
+    </div>
+
+    <!-- Entry and Exit Requirements -->
+    <div class="container-fluid padding">
+        <h2>Entry and Exit Requirements</h2>
+        <br>
+        <p class="ml-4">{{ entry_exit_desc }}</p>
+        <br>
+        {% for i in range(regional_cat|length) %}
+
+            <h5 class="ml-4">{{ req_cat[i] }}</h5>
+            <p class="ml-4">{{ req_desc[i] }}</p>
+
+        {% endfor %}
+        <hr class="my-4">
+    </div>
+    
+    <!-- Health Section -->
+    <div class="container-fluid padding">
+            <h2>Health and Safety Information</h2>
+            <br>
+            <p class="ml-4">{{ health_desc }}</p>
+            <br>
+            <h3 class="text-center">Animal-Related Health Concerns</h3>
+            <br>
+            {% for i in range(animal_cat|length) %}
+
+                <h5 class="ml-4">{{ animal_cat[i] }}</h5>
+                <p class="ml-4">{{ animal_desc[i] }}</p>
+    
+            {% endfor %}
+
+            <br>
+            <h3 class="text-center">Person-to-Person Health Concerns</h3>
+            <br>
+            {% for i in range(person_cat|length) %}
+    
+                <h5 class="ml-4">{{ person_cat[i] }}</h5>
+                <p class="ml-4">{{ person_desc[i] }}</p>
+    
+            {% endfor %}
+
+            <br>
+            <h3 class="text-center">Food/Water-Related Health Concerns</h3>
+            <br>
+            {% for i in range(food_cat|length) %}
+    
+                <h5 class="ml-4">{{ food_cat[i] }}</h5>
+                <p class="ml-4">{{ food_desc[i] }}</p>
+    
+            {% endfor %}
+
+            <br>
+            <h3 class="text-center">Recommended Vaccinations</h3>
+            <br>
+            {% for i in range(vacc_cat|length) %}
+    
+                <h5 class="ml-4">{{ vacc_cat[i] }}</h5>
+                <p class="ml-4">{{ vacc_desc[i] }}</p>
+    
+            {% endfor %}
+
+            <br>
+            <h3 class="text-center">Insect-Related Health Concerns</h3>
+            <br>
+            {% for i in range(insect_cat|length) %}
+    
+                <h5 class="ml-4">{{ insect_cat[i] }}</h5>
+                <p class="ml-4">{{ insect_desc[i] }}</p>
+    
+            {% endfor %}
+
+            <br>
+            <h3 class="text-center">Country-Specific Health Information</h3>
+            <br>
+            {% for i in range(health_info_cat|length) %}
+    
+                <h5 class="ml-4">{{ health_info_cat[i] }}</h5>
+                <p class="ml-4">{{ health_info_desc[i] }}</p>
+    
+            {% endfor %}
+            <hr class="my-4">
+        </div>
+
+        <!-- Law and Culture Section -->
+        <div class="container-fluid padding">
+            <h2>Law and Culture</h2>
+            <br>
+            <p class="ml-4">{{ cult_desc }}</p>
+            <br>
+            {% for i in range(law_cat|length) %}
+    
+                <h5 class="ml-4">{{ law_cat[i] }}</h5>
+                <p class="ml-4">{{ law_desc[i] }}</p>
+    
+            {% endfor %}
+            <hr class="my-4">
+        </div>
+
+        <!-- Climate Information -->
+        <div class="container-fluid padding">
+            <h2>Climate Information</h2>
+            <br>
+            {% for i in range(clim_cat|length) %}
+    
+                <h5 class="ml-4">{{ clim_cat[i] }}</h5>
+                <p class="ml-4">{{ clim_desc[i] }}</p>
+    
+            {% endfor %}
+            <hr class="my-4">
+        </div>
+
+{% endblock %}
